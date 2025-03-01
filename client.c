@@ -20,11 +20,12 @@ char *ft_strjoin(char *s1, char *s2)
 	i = 0;
 	j = 0;
 	m = 0;
-	ret = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	ret = malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
 	while(s1[i])
 		ret[m++] = s1[i++];
 	while(s2[j])
 		ret[m++] = s2[j++];
+	ret[m++] = ' ';
 	ret[m] = '\0';
 	return(ret);
 }
@@ -32,10 +33,12 @@ char *ft_strjoin(char *s1, char *s2)
 
 char *dicmal_to_bin(char c)
 {
-	int i = 0;
-	int j = 7;
+	int i;
+	int j;
 	char *ret;
 
+	i = 0;
+	j = 7;
 	ret = malloc(8 * sizeof(char) + 1);
 	while(j >= 0)
 	{
@@ -52,6 +55,9 @@ char *dicmal_to_bin(char c)
 
 char **encrypte_via_bit(char *av)
 {
+	// printf("%s\n", av);
+	if (!av)
+		exit(1);
 	int i;
 	int j;
 	char **ret;
@@ -70,6 +76,8 @@ char **encrypte_via_bit(char *av)
 
 char *join_bits(char **str)
 {
+	if(!str)
+		exit(1);
 	int i;
 	int j;
 	char *ret;
@@ -79,21 +87,28 @@ char *join_bits(char **str)
 	ret = "";
 	while(str[i])
 	{
-		
+		ret = ft_strjoin(ret, str[i]);
+		i++;
 	}
+	return (ret);
 }
 
 int main(int ac, char **av)
 {
 	if (ac > 3)
-		return;
-	int i;
+		exit(1);
+	char **str = encrypte_via_bit(av[2]);
+	char *str1 = join_bits(str);
 
-	i = 0;
-	while(av[i])
-	{
+	ft_printf("%s\n", str1);
+	// int i;
+	// char **res;
 
-	}
+	// i = 0;
+	// while(av[i])
+	// {
+	// 	res[i] = join_bits()
+	// }
 }
 
 

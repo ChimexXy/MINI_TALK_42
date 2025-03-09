@@ -1,25 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/09 17:26:33 by mozahnou          #+#    #+#             */
+/*   Updated: 2025/03/09 22:29:14 by mozahnou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
-int bin_to_dicmal(char *str)
+int main(int ac, char **av)
 {
-	int i;
-	int j;
-	int ret;
-
-	i = 0;
-	j = 128;
-	ret = 0;
-	while(str[i])
-	{
-		if(str[i] == '1')
-			ret = ret + j;
-		j = j / 2;
-		i++;
-	}
-	return (ret);
+	ft_printf("PID : %d \n", get_pid());
+	
 }
-
-// int main()
-// {
-// 	ft_printf("%d\n", bin_to_dicmal("10100110"));
-// }

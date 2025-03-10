@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:26:33 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/09 22:29:14 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:30:01 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int main(int ac, char **av)
 {
-	ft_printf("PID : %d \n", get_pid());
-	
+	ft_printf("PID : %d\n", getpid());
 }

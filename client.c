@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:23:51 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/09 22:28:28 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:23:38 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(int ac, char **av)
 	int pid;
 
 	i = 0;
-	pid = get_pid();
+	pid = getpid();
 	if (ac != 3 || !av[2])
 		ft_printf("Invalid argument\n");
 	while (av[2][i])

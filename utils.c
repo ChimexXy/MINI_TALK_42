@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 22:04:21 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/09 22:14:15 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/12 02:39:08 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ int ft_atoi(char *str)
 		res += str[i] - 48;
 		i++;
 	}
+	if (str[i] == '\0')
+		return (-1);
 	return (res * sig);
 }

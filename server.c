@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:26:33 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/12 09:44:00 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:12:24 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ void	recive_bit(int signal, siginfo_t *info, void *context)
 	static unsigned char	tmp = 0;
 
 	(void)context;
+	(void)info;
 	if (pid != info->si_pid)
 	{
-		pid != info->si_pid;
+		pid = info->si_pid;
 		bit = 0;
 		tmp = 0;
 	}
-	bit = bit + 1;
+	bit++;
 	tmp = tmp | (signal == SIGUSR1);
 	if (bit == 8)
 	{
@@ -45,8 +46,9 @@ int main(int ac, char **av)
 	pid = getpid();
 	ft_printf("PID -> %d\n", pid);
 	sig.sa_flags = SA_SIGINFO;
-	sig.sa_sigaction ;
+	sig.sa_sigaction = recive_bit;
 	sigaction(SIGUSR1, &sig, NULL);
 	sigaction(SIGUSR2, &sig, NULL);
-	pause();
+	while(1)
+		pause();
 }

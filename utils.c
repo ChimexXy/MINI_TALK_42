@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 22:04:21 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/12 02:39:08 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:09:34 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int ft_atoi(char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sig *= -1;
+			return(-1);
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -45,7 +45,7 @@ int ft_atoi(char *str)
 		res += str[i] - 48;
 		i++;
 	}
-	if (str[i] == '\0')
+	if (str[i] != '\0')
 		return (-1);
 	return (res * sig);
 }

@@ -8,6 +8,6 @@
 #include <signal.h>
 
 int ft_atoi(char *str);
-
+int ft_strlen(char *str);
 
 #endif

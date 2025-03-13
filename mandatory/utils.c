@@ -6,21 +6,11 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 22:04:21 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/12 10:09:34 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/13 08:43:23 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-int ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 int ft_atoi(char *str)
 {

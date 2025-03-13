@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:23:51 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/12 10:05:55 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/13 08:34:27 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	send_bits(unsigned char c, int pid)
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int	i;
 	int pid;
@@ -45,6 +45,7 @@ int main(int ac, char **av)
 		ft_printf("Invalid PID\n");
 		return (1);
 	}
+	
 	while (av[2][i])
 	{
 		send_bits(av[2][i], pid);

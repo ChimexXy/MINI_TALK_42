@@ -6,11 +6,27 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 22:04:21 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/13 08:43:23 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/15 08:27:30 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void put_nbr(int n)
+{
+	if (n > 9)
+	{
+		put_nbr(n / 10);
+		put_nbr(n % 10);
+	}
+	else
+		ft_putchar(n + 48);
+}
 
 int ft_atoi(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 08:25:23 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/13 08:39:27 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/13 10:19:09 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	send_bits(unsigned char c, int pid)
 
 void mes_recive(int sig)
 {
-	if (sig = SIGUSR1)
-		ft_printf("Message Recive Successfully:) \n");
+	if (sig == SIGUSR1)
+		ft_printf("Message Recive Successfully :) \n");
 }
 
 int	main(int ac, char **av)

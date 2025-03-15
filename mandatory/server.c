@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:26:33 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/12 10:12:24 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/15 08:27:42 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int main(int ac, char **av)
 	int					pid;
 
 	pid = getpid();
-	ft_printf("PID -> %d\n", pid);
+	put_nbr(pid);
+	write(1, "\n", 1);
 	sig.sa_flags = SA_SIGINFO;
 	sig.sa_sigaction = recive_bit;
 	sigaction(SIGUSR1, &sig, NULL);

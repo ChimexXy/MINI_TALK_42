@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:23:51 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/13 08:34:27 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/15 07:37:16 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int	main(int ac, char **av)
 	i = 0;
 	if (ac != 3)
 	{
-		ft_printf("Invalid argument\n");
+		write(1, "Invalid argument\n", 17);
 		return (1);
 	}
 	pid = ft_atoi(av[1]);
 	if (pid == -1)
 	{
-		ft_printf("Invalid PID\n");
+		write(1, "Invalid PID\n", 12);
 		return (1);
 	}
 	

@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 08:25:36 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/13 08:39:36 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/15 08:29:58 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	recive_bit(int signal, siginfo_t *info, void *context)
 	if (bit == 8)
 	{
 		write(1, &tmp, 1);
+		if (tmp == '\0')
+			kill(pid, SIGUSR1);
 		bit = 0;
 		tmp = 0;
 	}
@@ -44,7 +46,8 @@ int main(int ac, char **av)
 	int					pid;
 
 	pid = getpid();
-	ft_printf("PID -> %d\n", pid);
+	put_nbr(pid);
+	write(1, "\n", 1);
 	sig.sa_flags = SA_SIGINFO;
 	sig.sa_sigaction = recive_bit;
 	sigaction(SIGUSR1, &sig, NULL);

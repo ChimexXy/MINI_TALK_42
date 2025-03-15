@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 08:25:23 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/13 10:19:09 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/15 09:00:36 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	send_bits(unsigned char c, int pid)
 void mes_recive(int sig)
 {
 	if (sig == SIGUSR1)
-		ft_printf("Message Recive Successfully :) \n");
+		write(1, "Message Recive Successfully :) \n", 32);
 }
 
 int	main(int ac, char **av)
@@ -42,16 +42,17 @@ int	main(int ac, char **av)
 	i = 0;
 	if (ac != 3)
 	{
-		ft_printf("Invalid argument\n");
+		write(1, "Invalid argument\n", 17);
 		return (1);
 	}
 	signal(SIGUSR1, mes_recive);
 	pid = ft_atoi(av[1]);
 	if (pid == -1)
 	{
-		ft_printf("Invalid PID\n");
+		write(1, "Invalid PID\n", 12);
 		return (1);
 	}
+	
 	while (av[2][i])
 	{
 		send_bits(av[2][i], pid);

@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <signal.h>
 
-int ft_atoi(char *str);
+int		ft_atoi(char *str);
+void	put_nbr(int n);
 
 #endif

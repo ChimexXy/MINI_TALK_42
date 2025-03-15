@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:26:33 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/15 08:27:42 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/15 08:48:14 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	recive_bit(int signal, siginfo_t *info, void *context)
 		tmp = tmp << 1;
 }
 
-int main(int ac, char **av)
+int main(void)
 {
 	struct sigaction	sig;
 	int					pid;

@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:23:51 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/15 07:37:16 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/26 19:09:50 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	send_bits(unsigned char c, int pid)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(100);
+		usleep(300);
 		bit--;
 	}
 }

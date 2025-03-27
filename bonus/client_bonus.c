@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 08:25:23 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/26 19:09:46 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/27 02:38:34 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	send_bits(unsigned char c, int pid)
 {
-	int bit;
+	int	bit;
 
 	bit = 7;
-	while(bit >= 0)
-	{  
+	while (bit >= 0)
+	{
 		if ((c >> bit) & 1)
 			kill(pid, SIGUSR1);
 		else
@@ -28,7 +28,7 @@ void	send_bits(unsigned char c, int pid)
 	}
 }
 
-void mes_recive(int sig)
+void	mes_recive(int sig)
 {
 	if (sig == SIGUSR1)
 		write(1, "Message Recive Successfully :) \n", 32);
@@ -37,7 +37,7 @@ void mes_recive(int sig)
 int	main(int ac, char **av)
 {
 	int	i;
-	int pid;
+	int	pid;
 
 	i = 0;
 	if (ac != 3)
@@ -52,7 +52,6 @@ int	main(int ac, char **av)
 		write(1, "Invalid PID\n", 12);
 		return (1);
 	}
-	
 	while (av[2][i])
 	{
 		send_bits(av[2][i], pid);

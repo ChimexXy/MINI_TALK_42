@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 08:43:31 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/25 02:49:06 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/27 02:40:37 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	put_nbr(int n)
 		ft_putchar(n + 48);
 }
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int	i;
-	int sig;
-	int res;
+	int	sig;
+	int	res;
 
 	i = 0;
 	sig = 1;
@@ -40,7 +40,7 @@ int ft_atoi(char *str)
 	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-			return(-1);
+		return (-1);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res *= 10;

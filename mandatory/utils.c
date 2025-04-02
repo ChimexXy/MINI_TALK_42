@@ -45,7 +45,7 @@ int	ft_atoi(char *str)
 	{
 		res *= 10;
 		res += str[i] - 48;
-		if (res * sig > INT_MAX || res * sig < INT_MAX)
+		if (res * sig > INT_MAX)
 			return (-1);
 		i++;
 	}
